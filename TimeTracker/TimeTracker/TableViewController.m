@@ -17,16 +17,19 @@
 
 @implementation TableViewController
 
-NSArray *cellNumberArray;
+//NSArray *cellNumberArray;
 NSArray *visitArr;
 
 
 - (void)viewDidLoad {
     
-    cellNumberArray = @[@"1", @"2", @"3", @"4"];
+    
+    
+//    cellNumberArray = @[@"1", @"2", @"3", @"4"];
     [self initVisitArray];
     
     [super viewDidLoad];
+    NSLog(@"______________________%@", _passedVisit.durationString);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

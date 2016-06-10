@@ -11,4 +11,9 @@
 
 @interface TableViewController : UITableViewController
 
+@property Visit *passedVisit;
+
+
+
+
 @end
