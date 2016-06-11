@@ -25,6 +25,6 @@
 -(NSTimeInterval)calculationDuration;
 -(NSString *)NSTimerInterval2StringCoverter:(NSTimeInterval) duration;
 -(NSString *)NSDate2StringConverter:(NSDate *)date;
--(Visit *)initVisitWith :(NSDate *)startTime :(BOOL) visitType;
+-(Visit *)initVisitWith :(NSDate *)startTime :(NSDate *)endTime :(NSTimeInterval)duration :(BOOL)visitType;
 
 @end

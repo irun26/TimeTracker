@@ -11,10 +11,14 @@
 @implementation Visit
 
 
--(Visit *)initVisitWith :(NSDate *)startTime :(BOOL) visitType{
+-(Visit *)initVisitWith :(NSDate *)startTime :(NSDate *)endTime :(NSTimeInterval)duration :(BOOL)visitType {
     self.startTime = startTime;
-    self.ifWorkVisit = visitType;
     self.startTimeString = [self NSDate2StringConverter:startTime];
+    self.endTime = endTime;
+    self.endTimeString = [self NSDate2StringConverter:endTime];
+    self.duration = duration;
+    self.durationString = [self NSTimerInterval2StringCoverter:duration];
+    self.ifWorkVisit = visitType;
     return self;
 }
 

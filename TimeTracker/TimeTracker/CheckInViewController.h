@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *durationTextfield;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *checkInOutButton;
 
 
 

@@ -281,6 +281,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="checkInOutButton" destination="REJ-4X-1uU" id="Tvk-RN-6oQ"/>
                         <outlet property="durationLabel" destination="4Lb-dW-Pke" id="Szt-Pk-3vk"/>
                         <outlet property="durationTextfield" destination="7Z6-Dw-ZeS" id="qgZ-hD-fcA"/>
                         <outlet property="endTimeLabel" destination="0Jj-LO-dNP" id="VsU-Dl-mSR"/>

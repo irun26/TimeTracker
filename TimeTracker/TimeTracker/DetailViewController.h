@@ -13,23 +13,17 @@
 
 @property (strong, nonatomic) Visit *visitDetail;
 
-//@property (strong, nonatomic) NSString *messageReceived;
-
 @property (weak, nonatomic) IBOutlet UILabel *visitDetailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *visitNameTextfield;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 @property (weak, nonatomic) IBOutlet UITextField *durationTextfield;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *startTimeTextfield;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *endTimeTextfield;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *workOrFamilyLabel;
 @property (weak, nonatomic) IBOutlet UITextField *workOrFamilyTextfield;
