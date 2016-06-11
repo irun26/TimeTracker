@@ -19,6 +19,8 @@
 
 //NSArray *cellNumberArray;
 NSArray *visitArr;
+NSTimeInterval workDurationSum;
+NSTimeInterval familyDurationSum;
 
 
 - (void)viewDidLoad {
@@ -27,7 +29,6 @@ NSArray *visitArr;
     
 //    cellNumberArray = @[@"1", @"2", @"3", @"4"];
     [self initVisitArray];
-    
     [super viewDidLoad];
     NSLog(@"______________________%@", _passedVisit.durationString);
     
@@ -93,7 +94,10 @@ NSArray *visitArr;
     visit4.durationString = [visit4 NSTimerInterval2StringCoverter:visit4.duration];
     visit4.ifWorkVisit = 1;
     
-    visitArr = @[visit1,visit2,visit3,visit4];
+    
+    visitArr = @[visit1,visit2,visit3,visit4,_passedVisit];
+    
+    _passedVisit.name = @"Visit5";
     
 }
 
@@ -162,26 +166,64 @@ NSArray *visitArr;
 
 
  #pragma mark - Navigation
+
+
+-(void)calcuationWorkSumAndFamSum{
+    for (Visit *visit in visitArr) {
+        if (visit.ifWorkVisit) {
+            workDurationSum += visit.duration;
+        }else{
+            familyDurationSum += visit.duration;
+        }
+    }
+
+}
+
+
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- 
+     NSString *summaryToSend1;
+     NSString *summaryToSend2;
+     NSString *summaryToSend;
+     if([[segue identifier] isEqualToString:@"toSummary"]){
+         [self calcuationWorkSumAndFamSum];
+         NSInteger ti = workDurationSum;
+         NSInteger seconds = ti % 60;
+         NSInteger minutes = (ti / 60) % 60;
+         NSInteger hours = (ti / 3600);
+         summaryToSend1 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds];
+         
+         NSInteger ta = familyDurationSum;
+         NSInteger seconds2 = ta % 60;
+         NSInteger minutes2 = (ta / 60) % 60;
+         NSInteger hours2 = (ta / 3600);
+         summaryToSend2 = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours2, (long)minutes2, (long)seconds2];
+         
+         summaryToSend = [NSString stringWithFormat:@"The time you spend with family is %@, the time you spend at work is %@ ", summaryToSend2, summaryToSend1];
+         
+         SummaryViewController *vc = [segue destinationViewController];
+         vc.summary = summaryToSend;
+         
+         
+}
+     if([[segue identifier] isEqualToString:@"toDetail"]){
+         
+         // Get the new view controller using [segue destinationViewController].
+         // Pass the selected object to the new view controller.
+         
+         DetailViewController *vc = [segue destinationViewController];
+         
+         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+         
+         //     NSString *selectedObject = [[visitArr objectAtIndex:selectedIndexPath.row] durationString];
+         //     NSLog(@"%@", selectedObject);
+         
+         //     vc.messageReceived = [[visitArr objectAtIndex:selectedIndexPath.row] durationString];
+         
+         vc.visitDetail = [visitArr objectAtIndex:selectedIndexPath.row];
      
-     // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- 
-     DetailViewController *vc = [segue destinationViewController];
-
-     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-     
-//     NSString *selectedObject = [[visitArr objectAtIndex:selectedIndexPath.row] durationString];
-//     NSLog(@"%@", selectedObject);
-     
-//     vc.messageReceived = [[visitArr objectAtIndex:selectedIndexPath.row] durationString];
-
-     vc.visitDetail = [visitArr objectAtIndex:selectedIndexPath.row];
-     
-
+     }
 }
 
 @end

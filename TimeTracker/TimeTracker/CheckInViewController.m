@@ -34,6 +34,7 @@ int buttonPressCount;
     [self toggleButtonStatusChange:YES];
     [super viewDidLoad];
     buttonPressCount = 0;
+    currentVisit = [[Visit alloc]init];
     
     
     // Do any additional setup after loading the view.
@@ -101,7 +102,7 @@ int buttonPressCount;
         currentVisit.durationString = durationString;
         
 
-        NSLog(@"%@",durationString);
+        NSLog(@"%@+++++++++++++++++++++++",currentVisit.durationString);
     }
     [self showEndTimeAndOhters];
     

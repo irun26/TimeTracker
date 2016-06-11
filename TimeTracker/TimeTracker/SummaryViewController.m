@@ -15,10 +15,10 @@
 @implementation SummaryViewController
 
 - (void)viewDidLoad {
-    
-//    NSLog(@"THis is a test");
-    
+
     [super viewDidLoad];
+    NSLog(@"))))))))))))))))))))%@",_summary);
+    _label.text = _summary;
     // Do any additional setup after loading the view.
 }
 
