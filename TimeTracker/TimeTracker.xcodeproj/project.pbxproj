@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9086C8731D0BBF920008C532 /* visitArraySingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C8721D0BBF920008C532 /* visitArraySingleton.m */; };
+		9086C8731D0BBF920008C532 /* VisitListSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C8721D0BBF920008C532 /* VisitListSingleton.m */; };
 		F45EAA251D09B3D5000731F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F45EAA241D09B3D5000731F8 /* main.m */; };
 		F45EAA281D09B3D5000731F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F45EAA271D09B3D5000731F8 /* AppDelegate.m */; };
 		F45EAA2E1D09B3D5000731F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45EAA2C1D09B3D5000731F8 /* Main.storyboard */; };
@@ -21,8 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9086C8711D0BBF920008C532 /* visitArraySingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = visitArraySingleton.h; sourceTree = "<group>"; };
-		9086C8721D0BBF920008C532 /* visitArraySingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = visitArraySingleton.m; sourceTree = "<group>"; };
+		9086C8711D0BBF920008C532 /* VisitListSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitListSingleton.h; sourceTree = "<group>"; };
+		9086C8721D0BBF920008C532 /* VisitListSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitListSingleton.m; sourceTree = "<group>"; };
 		F45EAA201D09B3D5000731F8 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45EAA241D09B3D5000731F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F45EAA261D09B3D5000731F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 			children = (
 				F45EAA491D09B937000731F8 /* Visit.h */,
 				F45EAA4A1D09B937000731F8 /* Visit.m */,
-				9086C8711D0BBF920008C532 /* visitArraySingleton.h */,
-				9086C8721D0BBF920008C532 /* visitArraySingleton.m */,
+				9086C8711D0BBF920008C532 /* VisitListSingleton.h */,
+				9086C8721D0BBF920008C532 /* VisitListSingleton.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F45EAA481D09B481000731F8 /* TableViewController.m in Sources */,
-				9086C8731D0BBF920008C532 /* visitArraySingleton.m in Sources */,
+				9086C8731D0BBF920008C532 /* VisitListSingleton.m in Sources */,
 				F45EAA281D09B3D5000731F8 /* AppDelegate.m in Sources */,
 				F4DAA0461D0AFF9D009612FB /* CheckInViewController.m in Sources */,
 				F45EAA251D09B3D5000731F8 /* main.m in Sources */,

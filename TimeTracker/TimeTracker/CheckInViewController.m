@@ -9,6 +9,7 @@
 #import "CheckInViewController.h"
 #import "Visit.h"
 #import "TableViewController.h"
+#import "VisitListSingleton.h"
 
 @interface CheckInViewController ()
 
@@ -118,13 +119,15 @@ if(buttonPressCount >=2){
     [_workOrFamilyTextfield setHidden:toggleStatus];
     [_durationLabel setHidden:toggleStatus];
     [_durationTextfield setHidden:toggleStatus];
-
 }
 
+
 - (IBAction)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"toLogs"]) {
-        TableViewController *vc = [segue destinationViewController];
-        vc.passedVisit = currentVisit;
+    [[VisitListSingleton getVisitSingleton] initVisitList];
+    if ([[segue identifier] isEqualToString:@"toLogs"] &&  currentVisit.duration != 0.00) {
+        [[VisitListSingleton getVisitSingleton]addNewVisitToList:currentVisit];
+//        TableViewController *vc = [segue destinationViewController];
+//        vc.passedVisit = currentVisit;
     }
 }
 
